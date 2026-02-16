@@ -1,0 +1,29 @@
+{
+  "name": "o2o-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for O2O Laravel bike leasing application - provides domain structure queries, file relationships, and Laravel tooling",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "laravel",
+    "claude",
+    "o2o"
+  ],
+  "author": "O2O Team",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "glob": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.3"
+  }
+}
