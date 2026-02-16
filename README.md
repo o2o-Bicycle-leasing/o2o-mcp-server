@@ -2,13 +2,14 @@
 
 Custom MCP (Model Context Protocol) server for the O2O bike leasing Laravel application. Provides Claude with direct access to your domain architecture, file relationships, database schema, code quality tools, and much more!
 
-## Version 2.0 - What's New
+## What It Does
 
-**🎉 Major Update!** Added 14 new powerful tools across 3 phases:
+Provides Claude with 18 specialized tools to analyze and navigate your O2O Laravel codebase:
 
-- **Phase 1**: Route Discovery, Repository Pattern Navigator, Test Coverage Helper
-- **Phase 2**: Component Usage Finder, Inertia Page Finder
-- **Phase 3**: API Endpoint Lister, Database Query Helper
+- **Route & Service Discovery**: Map routes, controllers, repositories, and complete service chains
+- **Test Coverage**: Find tests, identify untested code, understand test organization
+- **Component & Frontend**: Track Vue component usage, map Inertia pages to controllers
+- **API & Database**: List API endpoints, find table usage, discover Eloquent scopes
 
 ## Installation
 
@@ -91,9 +92,9 @@ Claude should use the `query_domain_structure` tool and return all files in the 
 
 ---
 
-## Available Tools (20 total)
+## Available Tools (18 total)
 
-### 📂 Original Tools (4)
+### 📂 Core Domain Tools
 
 #### 1. `query_domain_structure`
 
@@ -146,7 +147,7 @@ run_phpstan({ path: "app/Employer/Controllers/ContractController.php" })
 
 ---
 
-### 🗺️ Phase 1: Route Discovery (4 tools)
+### 🗺️ Route & Service Discovery
 
 #### 5. `find_route_by_name`
 
@@ -215,7 +216,7 @@ find_service_chain({ entity_name: "Order", domain: "Employer" })
 
 ---
 
-### ✅ Phase 1: Test Coverage Helper (3 tools)
+### ✅ Test Coverage
 
 #### 9. `find_tests_for_file`
 
@@ -267,7 +268,7 @@ get_test_structure_info()
 
 ---
 
-### 🧩 Phase 2: Component Usage Finder (2 tools)
+### 🧩 Component Usage
 
 #### 12. `find_component_usage`
 
@@ -302,7 +303,7 @@ find_unused_components({ domain: "Employer" })
 
 ---
 
-### 📄 Phase 2: Inertia Page Finder (2 tools)
+### 📄 Inertia Pages
 
 #### 14. `list_inertia_pages`
 
@@ -336,7 +337,7 @@ find_page_props({ page_name: "Order/Index" })
 
 ---
 
-### 🔌 Phase 3: API Endpoint Lister (2 tools)
+### 🔌 API Endpoints
 
 #### 16. `list_api_endpoints`
 
@@ -372,7 +373,7 @@ find_endpoint_details({ uri: "/async/fleet/orders" })
 
 ---
 
-### 🗄️ Phase 3: Database Query Helper (2 tools)
+### 🗄️ Database Queries
 
 #### 18. `find_table_usage`
 
@@ -485,7 +486,7 @@ If `php artisan route:list` fails:
 cd ~/Documents/projects/o2o-mcp-server
 git init
 git add .
-git commit -m "O2O MCP Server v2.0 with all 3 phases"
+git commit -m "Initial commit: O2O MCP Server"
 ```
 
 2. Push to GitHub/GitLab:
@@ -525,8 +526,6 @@ Edit `src/index.ts` and:
 4. Run `npm run build`
 5. Restart Claude Code
 
-See `NEW_TOOLS_SPECIFICATION.md` for detailed specifications.
-
 ### Changing O2O App Path
 
 If your O2O app is at a different location:
@@ -537,9 +536,9 @@ If your O2O app is at a different location:
 
 ---
 
-## What Claude Can Do Now
+## What Claude Can Do
 
-With these 20 tools, Claude can:
+With these 18 tools, Claude can:
 
 ✅ Navigate your entire domain architecture
 ✅ Find any route and its complete chain
@@ -556,11 +555,8 @@ With these 20 tools, Claude can:
 
 ## Version History
 
-- **2.0.0** - Major update: Added 14 new tools across 3 phases
-  - Phase 1: Route Discovery & Repository Pattern Navigator & Test Coverage
-  - Phase 2: Component Usage Finder & Inertia Page Finder
-  - Phase 3: API Endpoint Lister & Database Query Helper
-- **1.0.0** - Initial release with 4 core tools
+- **2.0.0** - Complete MCP server with 18 tools for comprehensive Laravel codebase analysis
+- **1.0.0** - Initial release with 4 core domain tools
 
 ---
 
